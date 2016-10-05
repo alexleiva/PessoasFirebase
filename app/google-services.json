@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "783910672191",
+    "firebase_url": "https://pessoasfirebase.firebaseio.com",
+    "project_id": "pessoasfirebase",
+    "storage_bucket": "pessoasfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783910672191:android:5469416fd7aea437",
+        "android_client_info": {
+          "package_name": "br.com.bleiva.alex.pessoasfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783910672191-b12mp1u8bgs13qta280me2svgp6ngi23.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.bleiva.alex.pessoasfirebase",
+            "certificate_hash": "CDA60E925EABDA9DB5D9265044D65B9CBF7870AE"
+          }
+        },
+        {
+          "client_id": "783910672191-gcpbb345848sa968gtrkiavdl1ds5ena.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMkFqWYY0jXMX94If83j7ThTDVX1gAlXs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "783910672191-gcpbb345848sa968gtrkiavdl1ds5ena.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

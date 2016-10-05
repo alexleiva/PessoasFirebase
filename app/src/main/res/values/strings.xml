@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PessoasFirebase</string>
+    <string name="erro_google_sign_in">Erro ao conectar na conta do Google</string>
+    <string name="google_sign_in_key">783910672191-gcpbb345848sa968gtrkiavdl1ds5ena.apps.googleusercontent.com</string>
+    <string name="button_google_sign_in">Conectar com o Google</string>
+    <string name="sign_out">Sign out</string>
+</resources>
