@@ -4,4 +4,5 @@
     <string name="google_sign_in_key">783910672191-gcpbb345848sa968gtrkiavdl1ds5ena.apps.googleusercontent.com</string>
     <string name="button_google_sign_in">Conectar com o Google</string>
     <string name="sign_out">Sign out</string>
+    <string name="button_salvar">Salvar</string>
 </resources>
