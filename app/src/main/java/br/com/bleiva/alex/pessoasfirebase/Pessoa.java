@@ -13,6 +13,7 @@ public class Pessoa {
     private String nome;
     private String email;
     private int idade;
+    private String id;
 
     public Pessoa() {
     }
@@ -21,6 +22,14 @@ public class Pessoa {
         this.nome = nome;
         this.email = email;
         this.idade = idade;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNome() {

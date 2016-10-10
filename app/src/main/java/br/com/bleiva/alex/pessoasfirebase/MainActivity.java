@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -62,12 +63,12 @@ public class MainActivity extends AppCompatActivity {
         mainBinding.recyclerView.setHasFixedSize(true);
         mainBinding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mAdapter = new FirebaseRecyclerAdapter<Pessoa, PessoaHolder>(Pessoa.class, R.layout.item_pessoa, PessoaHolder.class, pessoasRef) {
+        mAdapter = new PessoaAdapter(pessoasRef, new PessoaAdapter.PessoaListener() {
             @Override
-            public void populateViewHolder(PessoaHolder pessoaHolder, Pessoa pessoa, int position) {
-                pessoaHolder.setPessoa(pessoa);
+            public void onPessoaClicked(Pessoa pessoa) {
+                Toast.makeText(MainActivity.this, pessoa.getNome(), Toast.LENGTH_SHORT).show();
             }
-        };
+        });
         mainBinding.recyclerView.setAdapter(mAdapter);
     }
 
@@ -108,18 +109,5 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickNovo(View view) {
         startActivity(new Intent(this, CadastroActivity.class));
-    }
-
-    public static class PessoaHolder extends RecyclerView.ViewHolder {
-        ItemPessoaBinding mBinding;
-
-        public PessoaHolder(View view) {
-            super(view);
-            mBinding = DataBindingUtil.bind(view);
-        }
-
-        public void setPessoa(Pessoa pessoa) {
-            mBinding.setPessoa(pessoa);
-        }
     }
 }
