@@ -2,13 +2,16 @@ package br.com.bleiva.alex.pessoasfirebase;
 
 import android.databinding.Bindable;
 
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
 import java.lang.annotation.Annotation;
 
 /**
  * Created by Alex on 06/10/2016.
  */
 
-public class Pessoa {
+public class Pessoa implements Serializable {
 
     private String nome;
     private String email;
@@ -24,10 +27,12 @@ public class Pessoa {
         this.idade = idade;
     }
 
+    @Exclude
     public String getId() {
         return id;
     }
 
+    @Exclude
     public void setId(String id) {
         this.id = id;
     }

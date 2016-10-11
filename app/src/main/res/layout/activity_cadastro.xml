@@ -15,17 +15,18 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
         tools:context="br.com.bleiva.alex.pessoasfirebase.CadastroActivity">
 
         <EditText
             android:id="@+id/edt_nome"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@={pessoa.nome}"/>
 
         <EditText
             android:id="@+id/edt_email"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@={pessoa.email}"/>
 

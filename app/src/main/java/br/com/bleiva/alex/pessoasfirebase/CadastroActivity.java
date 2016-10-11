@@ -13,16 +13,25 @@ import br.com.bleiva.alex.pessoasfirebase.databinding.ActivityCadastroBinding;
 
 public class CadastroActivity extends AppCompatActivity {
 
+    public static final String EXTRA_PESSOA = "pessoa";
     private FirebaseDatabase database;
     private DatabaseReference pessoasRef;
     private ActivityCadastroBinding mBinding;
     private FirebaseAuth auth;
+    private boolean isNewPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_cadastro);
-        mBinding.setPessoa(new Pessoa());
+
+        Pessoa pessoa = (Pessoa) getIntent().getSerializableExtra(EXTRA_PESSOA);
+        isNewPessoa = pessoa == null;
+        if (isNewPessoa) {
+            mBinding.setPessoa(new Pessoa());
+        } else {
+            mBinding.setPessoa(pessoa);
+        }
 
         auth = FirebaseAuth.getInstance();
 
@@ -31,6 +40,12 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     public void clickSalvar(View view) {
-        pessoasRef.push().setValue(mBinding.getPessoa());
+        Pessoa pessoa = mBinding.getPessoa();
+        if (isNewPessoa) {
+            pessoasRef.push().setValue(pessoa);
+        } else {
+            pessoasRef.child(pessoa.getId()).setValue(pessoa);
+        }
+        finish();
     }
 }

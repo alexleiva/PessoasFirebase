@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.Serializable;
+
 import br.com.bleiva.alex.pessoasfirebase.databinding.ActivityMainBinding;
 import br.com.bleiva.alex.pessoasfirebase.databinding.ItemPessoaBinding;
 
@@ -66,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new PessoaAdapter(pessoasRef, new PessoaAdapter.PessoaListener() {
             @Override
             public void onPessoaClicked(Pessoa pessoa) {
-                Toast.makeText(MainActivity.this, pessoa.getNome(), Toast.LENGTH_SHORT).show();
+                Intent it = new Intent(MainActivity.this, CadastroActivity.class);
+                it.putExtra(CadastroActivity.EXTRA_PESSOA, pessoa);
+                startActivity(it);
             }
         });
         mainBinding.recyclerView.setAdapter(mAdapter);
